@@ -9,7 +9,7 @@
 
 .solid {
   background: var(--surface-action);
-  color: var(--text-on-action);
+  color: #ff0000;
 }
 
 .outline {
