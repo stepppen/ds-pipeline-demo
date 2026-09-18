@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "declaration-property-value-allowed-list": {
+      "/^(color|background|background-color|border-color|fill)$/": [
+        "/^var\\(--/",
+        "transparent",
+        "currentColor",
+        "inherit"
+      ]
+    }
+  }
+}
