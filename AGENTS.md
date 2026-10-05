@@ -28,6 +28,10 @@ There are two kinds of task here. Each task is one or the other — never both.
 - Before using a component, check its props in the Storybook components manifest
   (`docs-list`, then `docs-show`). The manifest is the source of truth. Do not
   invent props or variant values.
+- Components deliberately do not accept `className` or `style`. Callers cannot
+  restyle a component; if it doesn't fit a screen, request a change to the
+  system (a prop, variant or token). This is what stops the library being
+  bypassed.
 
 ## Known gaps
 What the design system is missing, found while planning approval v2 (Oct 2026).
