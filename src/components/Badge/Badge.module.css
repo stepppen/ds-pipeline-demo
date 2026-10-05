@@ -3,7 +3,7 @@
   align-items: center;
   border: var(--border-width-thin) solid transparent;
   border-radius: var(--radius-pill);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
 }
 
