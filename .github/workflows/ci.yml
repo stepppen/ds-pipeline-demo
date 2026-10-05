@@ -24,6 +24,7 @@ jobs:
             exit 1
           }
       - run: npm run lint:css
+      - run: npm run check:prototypes
 
       - uses: chromaui/action@latest
         with:

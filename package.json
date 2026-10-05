@@ -13,7 +13,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_b9ee561920773e1",
-    "prepare": "git config core.hooksPath .githooks"
+    "prepare": "git config core.hooksPath .githooks",
+    "check:prototypes": "scripts/check-prototype-manifest.sh"
   },
   "dependencies": {
     "react": "^19.2.8",
