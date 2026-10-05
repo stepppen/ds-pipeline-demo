@@ -36,7 +36,6 @@ design-system task. Remove an entry once it ships.
 
 **Components**
 - Avatar — initials from name, sizes, decorative mode.
-- Banner — success / info / warning / danger tones, action slot, dismiss.
 - EmptyState — title, description, action slot.
 - SelectableListItem — selected (open) vs checked states, leading/trailing slots.
 - Heading / Text, Panel / Card, Icon.

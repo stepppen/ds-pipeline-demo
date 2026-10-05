@@ -1,0 +1,53 @@
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-width-thin) solid var(--banner-border);
+  border-radius: var(--radius-md);
+  background: var(--banner-surface);
+  color: var(--text-default);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+}
+
+.info {
+  --banner-surface: var(--feedback-info-surface);
+  --banner-text: var(--feedback-info-text);
+  --banner-border: var(--feedback-info-border);
+}
+.success {
+  --banner-surface: var(--feedback-success-surface);
+  --banner-text: var(--feedback-success-text);
+  --banner-border: var(--feedback-success-border);
+}
+.warning {
+  --banner-surface: var(--feedback-warning-surface);
+  --banner-text: var(--feedback-warning-text);
+  --banner-border: var(--feedback-warning-border);
+}
+.danger {
+  --banner-surface: var(--feedback-danger-surface);
+  --banner-text: var(--feedback-danger-text);
+  --banner-border: var(--feedback-danger-border);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  color: var(--banner-text);
+  font-weight: var(--font-weight-bold);
+}
+
+.action {
+  display: flex;
+  flex: none;
+  gap: var(--space-2);
+}
