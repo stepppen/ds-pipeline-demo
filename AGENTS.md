@@ -35,7 +35,6 @@ Prototypes approximate these and list them; they are filled only by an explicit
 design-system task. Remove an entry once it ships.
 
 **Components**
-- Checkbox — checked, indeterminate, disabled.
 - Chip / ChipGroup — toggleable filter with `aria-pressed`.
 - Avatar — initials from name, sizes, decorative mode.
 - Banner — success / info / warning / danger tones, action slot, dismiss.
