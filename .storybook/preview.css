@@ -1,0 +1,4 @@
+/* Base page styles for the Storybook canvas only. Components set their own font. */
+body {
+  font-family: var(--font-family-sans);
+}

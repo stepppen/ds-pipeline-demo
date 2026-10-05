@@ -1,4 +1,5 @@
 .badge {
+  font-family: var(--font-family-sans);
   display: inline-flex;
   align-items: center;
   border: var(--border-width-thin) solid transparent;

@@ -5,7 +5,7 @@
   gap: var(--space-1);
   border: var(--border-width-thin) solid transparent;
   border-radius: var(--radius-md);
-  font-family: inherit;
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
   cursor: pointer;

@@ -1,4 +1,5 @@
 .banner {
+  font-family: var(--font-family-sans);
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);

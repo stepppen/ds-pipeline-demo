@@ -77,4 +77,5 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --size-checkbox: 16px;
+  --font-family-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }

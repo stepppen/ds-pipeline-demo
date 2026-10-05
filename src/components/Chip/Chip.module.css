@@ -7,7 +7,7 @@
   border-radius: var(--radius-pill);
   background: var(--surface-page);
   color: var(--text-default);
-  font-family: inherit;
+  font-family: var(--font-family-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-normal);
