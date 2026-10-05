@@ -17,6 +17,12 @@ jobs:
 
       - run: npm ci
       - run: npm run tokens
+      - name: Check tokens.css is up to date
+        run: |
+          git diff --exit-code src/styles/tokens.css || {
+            echo "::error file=src/styles/tokens.css::tokens.css is out of date with tokens/. Run 'npm run tokens' and commit the result."
+            exit 1
+          }
       - run: npm run lint:css
 
       - uses: chromaui/action@latest

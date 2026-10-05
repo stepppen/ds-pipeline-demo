@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_b9ee561920773e1"
+    "chromatic": "npx chromatic --project-token=chpt_b9ee561920773e1",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "dependencies": {
     "react": "^19.2.8",
