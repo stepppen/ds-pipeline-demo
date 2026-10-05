@@ -47,6 +47,11 @@
   background: var(--surface-action-hover);
 }
 
+.input[aria-invalid='true']:not(:disabled),
+.input[aria-invalid='true']:not(:disabled):hover {
+  border-color: var(--feedback-danger-border);
+}
+
 .input:focus-visible {
   outline: var(--focus-ring-width) solid var(--focus-ring-color);
   outline-offset: var(--focus-ring-offset);

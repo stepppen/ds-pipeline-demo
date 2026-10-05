@@ -41,7 +41,8 @@ textarea.control {
   outline-offset: var(--focus-ring-offset);
 }
 
-.control[aria-invalid='true'] {
+.control[aria-invalid='true']:not(:disabled),
+.control[aria-invalid='true']:not(:disabled):hover {
   border-color: var(--feedback-danger-border);
 }
 

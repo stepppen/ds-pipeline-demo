@@ -8,6 +8,7 @@ type CheckboxProps = {
   indeterminate?: boolean
   onChange?: (checked: boolean) => void
   disabled?: boolean
+  invalid?: boolean
 }
 
 export function Checkbox({
@@ -17,6 +18,7 @@ export function Checkbox({
   indeterminate = false,
   onChange,
   disabled = false,
+  invalid = false,
 }: CheckboxProps) {
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -34,6 +36,7 @@ export function Checkbox({
           checked={checked}
           disabled={disabled}
           aria-label={hideLabel ? label : undefined}
+          aria-invalid={invalid || undefined}
           onChange={(event) => onChange?.(event.target.checked)}
         />
         <svg className={styles.check} viewBox="0 0 16 16" aria-hidden="true">

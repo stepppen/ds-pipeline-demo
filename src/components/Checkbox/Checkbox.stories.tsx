@@ -30,6 +30,7 @@ const meta = {
     checked: { control: 'boolean' },
     indeterminate: { control: 'boolean' },
     disabled: { control: 'boolean' },
+    invalid: { control: 'boolean' },
   },
   args: {
     label: 'Select Q4 Marketing Budget',
@@ -37,6 +38,7 @@ const meta = {
     checked: false,
     indeterminate: false,
     disabled: false,
+    invalid: false,
     onChange: fn(),
   },
   // Local state keyed on the args, so clicking works in tests and the Controls panel still resets it.
@@ -93,3 +95,12 @@ export const Keyboard: Story = {
     await expect(checkbox).toBeChecked()
   },
 }
+
+export const Invalid: Story = {
+  args: { label: 'I have reviewed the attached files', invalid: true },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('checkbox')).toHaveAttribute('aria-invalid', 'true')
+  },
+}
+
+export const InvalidChecked: Story = { args: { label: 'I have reviewed the attached files', invalid: true, checked: true } }
