@@ -44,20 +44,9 @@ design-system task. Remove an entry once it ships.
 - SelectableListItem — selected (open) vs checked states, leading/trailing slots.
 - Heading / Text, Panel / Card, Icon.
 
-**Props on existing components**
-- Badge has no semantic tones; four statuses map onto two styles.
-- Button has no `aria-label` or `aria-pressed`, so repeated labels ("Open")
-  can't be told apart and it can't act as a toggle.
-
 **Tokens**
-- Border width and font weight (components hardcode `1px` and `600`).
-- Muted, placeholder and disabled text colours; disabled opacity (hardcoded `0.5`).
-- Font sizes above `--font-size-lg`; line-height; font family.
-- Spacing above `--space-5`.
-- Focus ring colour, width and offset (no component has `:focus-visible` styles).
-- Feedback colours: success, warning, danger, info (surface, text, border).
-- `--surface-selected`, `--surface-hover`, `--surface-default` (page).
-- `--border-strong` for inputs: `--border-default` on white is about 1.3:1 (needs 3:1).
-- `--radius-sm`; sizes for controls, checkboxes, avatars and icons; avatar colours.
+- Muted text colour (helper text uses `--text-default`).
+- Font sizes above `--font-size-lg`; font family.
+- Sizes for controls, avatars and icons; avatar colours.
 - Layout widths, elevation, z-index, motion duration/easing; breakpoints (not
   expressible as CSS variables in media queries).

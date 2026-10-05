@@ -1,11 +1,15 @@
+import type { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react'
 import styles from './Button.module.css'
 
-type ButtonProps = {
-  children: React.ReactNode
+type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'style'> & {
+  children: ReactNode
   variant?: 'primary' | 'secondary'
   size?: 'sm' | 'md' | 'lg'
   disabled?: boolean
-  onClick?: () => void
+  type?: 'button' | 'submit' | 'reset'
+  'aria-label'?: string
+  'aria-pressed'?: boolean | 'mixed'
+  onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 export function Button({
@@ -13,14 +17,15 @@ export function Button({
   variant = 'primary',
   size = 'md',
   disabled = false,
-  onClick,
+  type = 'button',
+  ...rest
 }: ButtonProps) {
   return (
     <button
-      type="button"
+      {...rest}
+      type={type}
       className={`${styles.button} ${styles[variant]} ${styles[size]}`}
       disabled={disabled}
-      onClick={onClick}
     >
       {children}
     </button>

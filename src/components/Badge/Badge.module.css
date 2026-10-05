@@ -1,21 +1,39 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  border: 1px solid transparent;
+  border: var(--border-width-thin) solid transparent;
   border-radius: var(--radius-pill);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+/* Tones set the colours; variants decide how they're applied. */
+.neutral {
+  --badge-color: var(--surface-action);
+  --badge-border: var(--surface-action);
+}
+.success {
+  --badge-color: var(--feedback-success-text);
+  --badge-border: var(--feedback-success-border);
+}
+.warning {
+  --badge-color: var(--feedback-warning-text);
+  --badge-border: var(--feedback-warning-border);
+}
+.danger {
+  --badge-color: var(--feedback-danger-text);
+  --badge-border: var(--feedback-danger-border);
 }
 
 .solid {
-  background: var(--surface-action);
+  background: var(--badge-color);
   color: var(--text-on-action);
 }
 
 .outline {
   background: transparent;
-  color: var(--surface-action);
-  border-color: var(--surface-action);
+  color: var(--badge-color);
+  border-color: var(--badge-border);
 }
 
 .sm { padding: var(--space-1) var(--space-2); font-size: var(--font-size-sm); }
