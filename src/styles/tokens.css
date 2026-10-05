@@ -51,8 +51,11 @@
   --font-size-sm: 12px;
   --font-size-md: 14px;
   --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
   --text-on-action: #ffffff;
   --text-default: #12161c;
+  --text-muted: #68717c;
   --text-placeholder: #68717c;
   --text-disabled: #9aa2ab;
   --focus-ring-color: #3570d4;

@@ -46,8 +46,6 @@ design-system task. Remove an entry once it ships.
 - Heading / Text, Panel / Card, Icon.
 
 **Tokens**
-- Muted text colour (helper text uses `--text-default`).
-- Font sizes above `--font-size-lg`.
 - Sizes for controls, avatars and icons; avatar colours.
 - Layout widths, elevation, z-index, motion duration/easing; breakpoints (not
   expressible as CSS variables in media queries).

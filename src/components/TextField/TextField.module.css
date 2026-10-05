@@ -60,6 +60,10 @@ textarea.control {
   font-size: var(--font-size-sm);
 }
 
+.helper {
+  color: var(--text-muted);
+}
+
 .error {
   color: var(--feedback-danger-text);
 }
