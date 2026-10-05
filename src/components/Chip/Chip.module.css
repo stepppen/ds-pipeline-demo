@@ -1,0 +1,57 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-width-thin) solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-page);
+  color: var(--text-default);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  cursor: pointer;
+}
+
+.chip:hover:not(:disabled) {
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
+}
+
+.chip[aria-pressed='true'] {
+  border-color: var(--surface-action);
+  background: var(--surface-action);
+  color: var(--text-on-action);
+}
+
+.chip[aria-pressed='true']:hover:not(:disabled) {
+  border-color: var(--surface-action-hover);
+  background: var(--surface-action-hover);
+}
+
+.chip:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.chip:disabled {
+  border-color: var(--border-default);
+  background: var(--surface-page);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.chip[aria-pressed='true']:disabled {
+  background: var(--surface-disabled);
+}
+
+.count {
+  font-weight: var(--font-weight-bold);
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
