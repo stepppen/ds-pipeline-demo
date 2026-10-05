@@ -36,6 +36,7 @@ design-system task. Remove an entry once it ships.
 
 **Components**
 - Avatar — initials from name, sizes, decorative mode.
+- Badge `tone="neutral"` — a genuine grey tone (`brand`, the default, is the brand red).
 - EmptyState — title, description, action slot.
 - SelectableListItem — selected (open) vs checked states, leading/trailing slots.
 - Heading / Text, Panel / Card, Icon.

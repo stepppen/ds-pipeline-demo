@@ -8,7 +8,7 @@
 }
 
 /* Tones set the colours; variants decide how they're applied. */
-.neutral {
+.brand {
   --badge-color: var(--surface-action);
   --badge-border: var(--surface-action);
 }

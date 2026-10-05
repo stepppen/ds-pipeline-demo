@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Badge } from './Badge'
 
-const tones = ['neutral', 'success', 'warning', 'danger'] as const
+const tones = ['brand', 'success', 'warning', 'danger'] as const
 const variants = ['solid', 'outline'] as const
 
 const meta = {
@@ -14,7 +14,7 @@ const meta = {
     tone: { control: 'inline-radio', options: tones },
     children: { control: 'text' },
   },
-  args: { children: 'In review', variant: 'solid', size: 'md', tone: 'neutral' },
+  args: { children: 'In review', variant: 'solid', size: 'md', tone: 'brand' },
 } satisfies Meta<typeof Badge>
 
 export default meta
