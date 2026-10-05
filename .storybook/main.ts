@@ -5,6 +5,9 @@ const config: StorybookConfig = {
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
+  features: {
+    componentsManifest: true,
+  },
   "addons": [
     "@chromatic-com/storybook",
     "@storybook/addon-vitest",
