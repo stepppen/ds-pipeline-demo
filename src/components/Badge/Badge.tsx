@@ -5,11 +5,12 @@ type BadgeProps = {
   children: ReactNode
   variant?: 'solid' | 'outline'
   size?: 'sm' | 'md' | 'lg'
+  tone?: 'brand' | 'success' | 'warning' | 'danger'
 }
 
-export function Badge({ children, variant = 'solid', size = 'md' }: BadgeProps) {
+export function Badge({ children, variant = 'solid', size = 'md', tone = 'brand' }: BadgeProps) {
   return (
-    <span className={`${styles.badge} ${styles[variant]} ${styles[size]}`}>
+    <span className={`${styles.badge} ${styles[tone]} ${styles[variant]} ${styles[size]}`}>
       {children}
     </span>
   )
