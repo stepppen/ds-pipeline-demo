@@ -35,7 +35,6 @@ Prototypes approximate these and list them; they are filled only by an explicit
 design-system task. Remove an entry once it ships.
 
 **Components**
-- TextField (incl. search) and Textarea — label, helper/error text, invalid state.
 - Checkbox — checked, indeterminate, disabled.
 - Chip / ChipGroup — toggleable filter with `aria-pressed`.
 - Avatar — initials from name, sizes, decorative mode.
