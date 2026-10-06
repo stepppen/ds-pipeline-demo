@@ -39,11 +39,9 @@ Prototypes approximate these and list them; they are filled only by an explicit
 design-system task. Remove an entry once it ships.
 
 **Components**
-- Badge `tone="neutral"` — a genuine grey tone (`brand`, the default, is the brand red).
 - EmptyState — title, description, action slot.
 - ListRow `checked` state — ListRow ships selected (open), leading/trailing slots
   and dividers, but not a separate checked (multi-select) state.
-- Icon.
 
 **Tokens**
 - Sizes for controls; avatar colours.

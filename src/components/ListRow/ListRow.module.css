@@ -13,8 +13,8 @@
 }
 
 /* Divider between consecutive rows, whether siblings or wrapped in <li>s. */
-.row + .row,
-li + li > .row {
+.row + .row:not(.noDivider),
+li + li > .row:not(.noDivider) {
   border-top: var(--border-width-thin) solid var(--border-default);
 }
 

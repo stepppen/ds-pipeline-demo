@@ -1,0 +1,30 @@
+.iconButton {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-default);
+  cursor: pointer;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: var(--surface-subtle);
+}
+
+.iconButton:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.iconButton:disabled {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+/* Square: the icon size plus equal padding on every side. */
+.sm { padding: var(--space-1); }
+.md { padding: var(--space-2); }

@@ -33,6 +33,16 @@
   --banner-border: var(--feedback-danger-border);
 }
 
+.icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  /* One line tall, so the icon centres on the first line of text. */
+  height: calc(var(--font-size-md) * var(--line-height-normal));
+  color: var(--banner-text);
+  font-size: var(--size-icon-md);
+}
+
 .content {
   display: flex;
   flex: 1;

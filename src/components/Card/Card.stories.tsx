@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect } from 'storybook/test'
 import { Heading } from '../Heading/Heading'
+import { IconButton } from '../IconButton/IconButton'
 import { Text } from '../Text/Text'
 import { Card } from './Card'
 
@@ -14,6 +15,14 @@ const meta = {
       control: 'inline-radio',
       options: ['none', 'heading'],
       mapping: { none: undefined, heading: <Heading level={3}>Q4 Marketing Budget</Heading> },
+    },
+    title: { control: 'text' },
+    count: { control: { type: 'number', min: 0 } },
+    titleLevel: { control: 'inline-radio', options: [2, 3] },
+    action: {
+      control: 'inline-radio',
+      options: ['none', 'add'],
+      mapping: { none: undefined, add: <IconButton icon="plus" size="sm" aria-label="Add entry" /> },
     },
     children: { control: false },
   },
@@ -44,4 +53,26 @@ export const AllPaddings: Story = {
       <Card {...args} padding="lg" />
     </div>
   ),
+}
+
+export const WithTitle: Story = {
+  args: { title: 'Upcoming appointments' },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('heading', { level: 2, name: 'Upcoming appointments' })).toBeVisible()
+  },
+}
+
+export const TitleWithCount: Story = {
+  args: { title: 'Alerts', count: 2 },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('heading', { name: 'Alerts (2)' })).toBeVisible()
+  },
+}
+
+export const TitleWithAction: Story = {
+  args: { title: 'Progress notes', count: 1, action: 'add', titleLevel: 3 },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('heading', { level: 3, name: 'Progress notes (1)' })).toBeVisible()
+    await expect(canvas.getByRole('button', { name: 'Add entry' })).toBeVisible()
+  },
 }

@@ -70,3 +70,27 @@ textarea.control {
 
 .sm { padding: var(--space-1) var(--space-2); font-size: var(--font-size-sm); }
 .md { padding: var(--space-2) var(--space-3); font-size: var(--font-size-md); }
+
+/* Leading icon: the icon box is one icon-size wide and the input text starts after it. */
+.controlWrap {
+  position: relative;
+  display: flex;
+}
+
+.iconSm { --field-icon-size: var(--size-icon-sm); --field-icon-inset: var(--space-2); }
+.iconMd { --field-icon-size: var(--size-icon-md); --field-icon-inset: var(--space-3); }
+
+.leadingIcon {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: var(--field-icon-inset);
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: var(--field-icon-size);
+  pointer-events: none;
+}
+
+.control.withLeadingIcon {
+  padding-inline-start: calc(var(--field-icon-inset) + var(--field-icon-size) + var(--space-2));
+}

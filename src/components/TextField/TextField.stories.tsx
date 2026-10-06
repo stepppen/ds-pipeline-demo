@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState, type ComponentProps } from 'react'
 import { expect, fn, userEvent } from 'storybook/test'
+import { Icon } from '../../icons/Icon'
 import { TextField } from './TextField'
 
 function ControlledTextField(args: ComponentProps<typeof TextField>) {
@@ -36,6 +37,11 @@ const meta = {
     rows: { control: { type: 'number', min: 1 } },
     required: { control: 'boolean' },
     maxLength: { control: { type: 'number', min: 1 } },
+    leadingIcon: {
+      control: 'inline-radio',
+      options: ['none', 'search'],
+      mapping: { none: undefined, search: <Icon name="search" /> },
+    },
   },
   args: {
     label: 'Document name',
@@ -121,4 +127,17 @@ export const Multiline: Story = {
 
 export const MultilineInvalid: Story = {
   args: { ...Multiline.args, invalid: true, errorText: 'Add a comment before requesting changes.' },
+}
+
+export const WithLeadingIcon: Story = {
+  args: { label: 'Search records', hideLabel: true, type: 'search', placeholder: 'Search (patient, case, report) …', leadingIcon: 'search' },
+  play: async ({ canvas }) => {
+    const input = canvas.getByRole('searchbox', { name: 'Search records' })
+    await userEvent.type(input, 'Muster')
+    await expect(input).toHaveValue('Muster')
+  },
+}
+
+export const SmallWithLeadingIcon: Story = {
+  args: { size: 'sm', label: 'Search records', hideLabel: true, type: 'search', placeholder: 'Search …', leadingIcon: 'search' },
 }

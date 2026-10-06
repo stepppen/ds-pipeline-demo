@@ -1,0 +1,5 @@
+.icon {
+  flex-shrink: 0;
+  /* Sits on the text baseline like a glyph when used inline. */
+  vertical-align: -0.125em;
+}

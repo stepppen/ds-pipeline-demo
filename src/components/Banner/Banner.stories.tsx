@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, fn, userEvent } from 'storybook/test'
+import { Icon } from '../../icons/Icon'
 import { Button } from '../Button/Button'
 import { Banner } from './Banner'
 
@@ -15,6 +16,11 @@ const meta = {
       control: 'inline-radio',
       options: ['none', 'undo'],
       mapping: { none: undefined, undo: <Button variant="secondary" size="sm">Undo</Button> },
+    },
+    icon: {
+      control: 'inline-radio',
+      options: ['none', 'alert'],
+      mapping: { none: undefined, alert: <Icon name="alert-circle" /> },
     },
     onDismiss: { control: 'inline-radio', options: ['none', 'dismissible'], mapping: { none: undefined, dismissible: fn() } },
   },
@@ -68,3 +74,15 @@ export const Dismissible: Story = {
 }
 
 export const TitleOnly: Story = { args: { tone: 'success', title: '3 documents approved', children: undefined } }
+
+export const WithIcon: Story = {
+  args: { tone: 'danger', icon: 'alert', title: 'Allergies', children: 'Contrast media, adhesive plaster' },
+  play: async ({ canvas, canvasElement }) => {
+    await expect(canvas.getByRole('alert')).toHaveTextContent('Allergies')
+    await expect(canvasElement.querySelector('svg[aria-hidden="true"]')).not.toBeNull()
+  },
+}
+
+export const WarningWithIcon: Story = {
+  args: { tone: 'warning', icon: 'alert', title: 'Advance directive', children: 'Status unknown – please record' },
+}

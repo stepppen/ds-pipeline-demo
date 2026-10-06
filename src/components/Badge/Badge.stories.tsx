@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Badge } from './Badge'
 
-const tones = ['brand', 'success', 'warning', 'danger'] as const
+const tones = ['brand', 'success', 'warning', 'danger', 'neutral'] as const
 const variants = ['solid', 'outline'] as const
 
 const meta = {
@@ -27,6 +27,8 @@ export const Outline: Story = { args: { variant: 'outline' } }
 export const Success: Story = { args: { tone: 'success', children: 'Approved' } }
 export const Warning: Story = { args: { tone: 'warning', children: 'Changes requested' } }
 export const Danger: Story = { args: { tone: 'danger', children: 'Rejected' } }
+export const Neutral: Story = { args: { tone: 'neutral', children: 'Archived' } }
+export const NeutralOutline: Story = { args: { tone: 'neutral', variant: 'outline', children: 'Archived' } }
 
 export const AllSizes: Story = {
   render: (args) => (
@@ -40,7 +42,7 @@ export const AllSizes: Story = {
 
 export const AllTones: Story = {
   render: (args) => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, max-content)', gap: 'var(--space-3)' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, max-content)', gap: 'var(--space-3)' }}>
       {variants.flatMap((variant) =>
         tones.map((tone) => (
           <Badge key={`${variant}-${tone}`} {...args} variant={variant} tone={tone}>

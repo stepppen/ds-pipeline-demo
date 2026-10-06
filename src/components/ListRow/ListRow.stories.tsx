@@ -27,6 +27,7 @@ const meta = {
       },
     },
     selected: { control: 'boolean' },
+    divider: { control: 'boolean' },
     onClick: { control: 'inline-radio', options: ['none', 'clickable'], mapping: { none: undefined, clickable: fn() } },
   },
   args: {
@@ -126,5 +127,19 @@ export const InSemanticList: Story = {
   ),
   play: async ({ canvas }) => {
     await expect(canvas.getAllByRole('listitem')).toHaveLength(3)
+  },
+}
+
+export const WithoutDividers: Story = {
+  render: () => (
+    <div>
+      {items.map((item) => (
+        <ListRow key={item.id} title={item.title} subtitle={item.who} trailing={item.amount} divider={false} />
+      ))}
+    </div>
+  ),
+  play: async ({ canvas }) => {
+    const second = canvas.getByText('Team offsite travel').closest('div') as HTMLElement
+    await expect(getComputedStyle(second).borderTopStyle).toBe('none')
   },
 }

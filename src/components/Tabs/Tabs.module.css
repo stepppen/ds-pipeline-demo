@@ -1,0 +1,35 @@
+.tablist {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: var(--border-width-thin) solid var(--border-default);
+}
+
+.tab {
+  flex-shrink: 0;
+  margin: 0 0 calc(var(--border-width-thin) * -1);
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-bottom: var(--border-width-thick) solid transparent;
+  background: transparent;
+  color: var(--text-default);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: var(--surface-hover);
+}
+
+.tab[aria-selected='true'] {
+  border-bottom-color: var(--surface-action);
+}
+
+/* Inset so the ring isn't clipped by the scrolling tab list. */
+.tab:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+}
