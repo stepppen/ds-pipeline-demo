@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect } from 'storybook/test'
+import { Badge } from '../Badge/Badge'
 import { Table } from './Table'
 
 const columns = [
@@ -66,5 +67,19 @@ export const NotSortable: Story = {
   args: { columns: columns.map(({ header }) => ({ header })) },
   play: async ({ canvasElement }) => {
     await expect(canvasElement.querySelectorAll('th svg')).toHaveLength(0)
+  },
+}
+
+export const WithBadges: Story = {
+  args: {
+    caption: 'Billing items',
+    columns: [{ header: 'Code' }, { header: 'Description' }, { header: 'Status' }],
+    rows: [
+      { id: '1', cells: ['00.0010', 'Consultation, first 5 min', <Badge tone="success" variant="outline" size="sm">Billed</Badge>] },
+      { id: '2', cells: ['00.0415', 'Phone consultation', <Badge tone="warning" variant="outline" size="sm">To review</Badge>] },
+    ],
+  },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('cell', { name: 'To review' })).toBeVisible()
   },
 }

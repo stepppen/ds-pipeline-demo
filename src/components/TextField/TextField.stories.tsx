@@ -27,7 +27,7 @@ const meta = {
     hideLabel: { control: 'boolean' },
     value: { control: 'text' },
     placeholder: { control: 'text' },
-    type: { control: 'inline-radio', options: ['text', 'search'] },
+    type: { control: 'inline-radio', options: ['text', 'search', 'date', 'number'] },
     size: { control: 'inline-radio', options: ['sm', 'md'] },
     disabled: { control: 'boolean' },
     invalid: { control: 'boolean' },
@@ -140,4 +140,22 @@ export const WithLeadingIcon: Story = {
 
 export const SmallWithLeadingIcon: Story = {
   args: { size: 'sm', label: 'Search records', hideLabel: true, type: 'search', placeholder: 'Search …', leadingIcon: 'search' },
+}
+
+export const DateInput: Story = {
+  args: { label: 'Date', type: 'date', value: '2022-05-30', placeholder: undefined },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByLabelText('Date')).toHaveValue('2022-05-30')
+  },
+}
+
+export const NumberInput: Story = {
+  args: { label: 'Quantity', type: 'number', value: '1', min: 1, step: 1, placeholder: undefined },
+  play: async ({ canvas }) => {
+    const input = canvas.getByRole('spinbutton', { name: 'Quantity' })
+    await expect(input).toHaveAttribute('min', '1')
+    await userEvent.clear(input)
+    await userEvent.type(input, '3')
+    await expect(input).toHaveValue(3)
+  },
 }

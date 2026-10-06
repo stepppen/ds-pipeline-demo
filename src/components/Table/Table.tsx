@@ -1,11 +1,14 @@
-import { useId } from 'react'
+import { isValidElement, useId, type ReactElement } from 'react'
 import { Icon } from '../../icons/Icon'
 import styles from './Table.module.css'
 
 type Flag = 'L' | 'H'
 
-/** A plain value, or a value with a low/high flag shown after it (e.g. lab results). */
-export type TableCell = string | number | { value: string | number; flag?: Flag }
+/**
+ * A plain value, a value with a low/high flag shown after it (e.g. lab results),
+ * or an element such as a Badge.
+ */
+export type TableCell = string | number | ReactElement | { value: string | number; flag?: Flag }
 
 export type TableColumn = {
   header: string
@@ -29,7 +32,7 @@ type TableProps = {
 }
 
 function CellContent({ cell, flagLabels }: { cell: TableCell; flagLabels: Record<Flag, string> }) {
-  if (typeof cell !== 'object') return <>{cell}</>
+  if (typeof cell !== 'object' || isValidElement(cell)) return <>{cell}</>
   return (
     <>
       {cell.value}
