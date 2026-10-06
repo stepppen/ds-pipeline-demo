@@ -1,0 +1,11 @@
+.heading {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  color: var(--text-default);
+}
+
+.level1 { font-size: var(--font-size-2xl); }
+.level2 { font-size: var(--font-size-xl); }
+.level3 { font-size: var(--font-size-lg); }

@@ -1,0 +1,22 @@
+.card {
+  font-family: var(--font-family-sans);
+  border: var(--border-width-thin) solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-page);
+  box-shadow: var(--elevation-sm);
+  color: var(--text-default);
+}
+
+/* Padding sets one variable; header and body both use it so they stay aligned. */
+.sm { --card-padding: var(--space-3); }
+.md { --card-padding: var(--space-4); }
+.lg { --card-padding: var(--space-6); }
+
+.header {
+  padding: var(--card-padding);
+  border-bottom: var(--border-width-thin) solid var(--border-default);
+}
+
+.body {
+  padding: var(--card-padding);
+}
