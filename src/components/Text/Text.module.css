@@ -1,0 +1,14 @@
+.text {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-normal);
+}
+
+.sm { font-size: var(--font-size-sm); }
+.md { font-size: var(--font-size-md); }
+
+.default { color: var(--text-default); }
+.muted { color: var(--text-muted); }
+
+.regular { font-weight: var(--font-weight-regular); }
+.medium { font-weight: var(--font-weight-medium); }

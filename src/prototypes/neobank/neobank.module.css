@@ -1,0 +1,138 @@
+/*
+ * Layout only, plus the transaction amount (see .amount). Widths are multiples
+ * of --space-8 because layout-width tokens don't exist yet (known gap).
+ */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--surface-page);
+  color: var(--text-default);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-bottom: var(--border-width-thin) solid var(--border-default);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(var(--space-8) * 36);
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tightStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.cardHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--space-8) * 4), 1fr));
+  gap: var(--space-4);
+}
+
+/* Wraps to a single column when narrower than both bases plus the gap (~900px with page padding). */
+.masterDetail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.master {
+  display: flex;
+  flex: 3 1 calc(var(--space-8) * 14);
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.detail {
+  flex: 2 1 calc(var(--space-8) * 12);
+  min-width: 0;
+}
+
+.narrow {
+  max-width: calc(var(--space-8) * 18);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+  margin: 0;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.bankCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.spread {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+/*
+ * Transaction amounts sit in ListRow's trailing slot, which is inside a <button>,
+ * where Text's <p> isn't valid. Text has no span form and no success tone (gaps).
+ */
+.amount {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.incoming {
+  color: var(--feedback-success-text);
+}

@@ -39,13 +39,13 @@ Prototypes approximate these and list them; they are filled only by an explicit
 design-system task. Remove an entry once it ships.
 
 **Components**
-- Avatar — initials from name, sizes, decorative mode.
 - Badge `tone="neutral"` — a genuine grey tone (`brand`, the default, is the brand red).
 - EmptyState — title, description, action slot.
-- SelectableListItem — selected (open) vs checked states, leading/trailing slots.
-- Heading / Text, Panel / Card, Icon.
+- ListRow `checked` state — ListRow ships selected (open), leading/trailing slots
+  and dividers, but not a separate checked (multi-select) state.
+- Icon.
 
 **Tokens**
-- Sizes for controls, avatars and icons; avatar colours.
-- Layout widths, elevation, z-index, motion duration/easing; breakpoints (not
+- Sizes for controls; avatar colours.
+- Layout widths, z-index, motion duration/easing; breakpoints (not
   expressible as CSS variables in media queries).

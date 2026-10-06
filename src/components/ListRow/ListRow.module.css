@@ -1,0 +1,78 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 0;
+  background: transparent;
+  color: var(--text-default);
+  font-family: var(--font-family-sans);
+  text-align: start;
+}
+
+/* Divider between consecutive rows, whether siblings or wrapped in <li>s. */
+.row + .row,
+li + li > .row {
+  border-top: var(--border-width-thin) solid var(--border-default);
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  background: var(--surface-hover);
+}
+
+.row[aria-current='true'] {
+  background: var(--surface-selected);
+}
+
+/* --text-muted is 4.3:1 on --surface-selected, below AA; no muted-on-selected token exists. */
+.row[aria-current='true'] .subtitle {
+  color: var(--text-default);
+}
+
+/* Inset so the ring isn't clipped by a containing Card or scroll area. */
+.interactive:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+}
+
+.leading,
+.trailing {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.trailing {
+  margin-inline-start: auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title,
+.subtitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--text-muted);
+}
