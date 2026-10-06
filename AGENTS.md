@@ -42,8 +42,15 @@ design-system task. Remove an entry once it ships.
 - EmptyState — title, description, action slot.
 - ListRow `checked` state — ListRow ships selected (open), leading/trailing slots
   and dividers, but not a separate checked (multi-select) state.
+- Button tinted secondary — brand-subtle fill with action-colour text (KISIM
+  "Termin planen"); `secondary` is a neutral outline.
+- Text `weight="bold"` and `size="lg"` (16px body); Heading size independent of
+  level (KISIM patient name is h1 but 18px in the design).
+- ListRow title/subtitle sizes — fixed at 14px medium / 12px; KISIM uses 16px / 14px.
+- Banner without border (KISIM alerts are tint-only).
 
 **Tokens**
 - Sizes for controls; avatar colours.
+- Brand-subtle surface (action colour at ~10%) for tinted buttons and avatars.
 - Layout widths, z-index, motion duration/easing; breakpoints (not
   expressible as CSS variables in media queries).
