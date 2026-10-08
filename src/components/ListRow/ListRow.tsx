@@ -8,9 +8,20 @@ type ListRowProps = {
   trailing?: ReactNode
   onClick?: () => void
   selected?: boolean
+  /** Divider above this row when it follows another row. */
+  divider?: boolean
 }
 
-export function ListRow({ title, subtitle, leading, trailing, onClick, selected = false }: ListRowProps) {
+export function ListRow({
+  title,
+  subtitle,
+  leading,
+  trailing,
+  onClick,
+  selected = false,
+  divider = true,
+}: ListRowProps) {
+  const plain = divider ? '' : ` ${styles.noDivider}`
   const content = (
     <>
       {leading && <span className={styles.leading}>{leading}</span>}
@@ -26,7 +37,7 @@ export function ListRow({ title, subtitle, leading, trailing, onClick, selected 
     return (
       <button
         type="button"
-        className={`${styles.row} ${styles.interactive}`}
+        className={`${styles.row} ${styles.interactive}${plain}`}
         aria-current={selected || undefined}
         onClick={onClick}
       >
@@ -36,7 +47,7 @@ export function ListRow({ title, subtitle, leading, trailing, onClick, selected 
   }
 
   return (
-    <div className={styles.row} aria-current={selected || undefined}>
+    <div className={`${styles.row}${plain}`} aria-current={selected || undefined}>
       {content}
     </div>
   )

@@ -5,7 +5,7 @@ type BadgeProps = {
   children: ReactNode
   variant?: 'solid' | 'outline'
   size?: 'sm' | 'md' | 'lg'
-  tone?: 'brand' | 'success' | 'warning' | 'danger'
+  tone?: 'brand' | 'success' | 'warning' | 'danger' | 'neutral'
 }
 
 export function Badge({ children, variant = 'solid', size = 'md', tone = 'brand' }: BadgeProps) {

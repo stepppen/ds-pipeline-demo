@@ -26,6 +26,11 @@
   --badge-border: var(--feedback-danger-border);
 }
 
+.neutral {
+  --badge-color: var(--surface-subtle);
+  --badge-border: var(--border-strong);
+}
+
 .solid {
   background: var(--badge-color);
   color: var(--text-on-action);
@@ -35,6 +40,12 @@
   background: transparent;
   color: var(--badge-color);
   border-color: var(--badge-border);
+}
+
+/* Neutral is a light grey pill, so it keeps dark text in both variants. */
+.neutral.solid,
+.neutral.outline {
+  color: var(--text-default);
 }
 
 .sm { padding: var(--space-1) var(--space-2); font-size: var(--font-size-sm); }

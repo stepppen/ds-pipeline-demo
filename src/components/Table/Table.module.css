@@ -1,0 +1,64 @@
+.scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.scroll:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-default);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-normal);
+}
+
+.caption {
+  padding-bottom: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+  text-align: start;
+}
+
+.visuallyHidden {
+  position: absolute;
+  /* Visually hidden but still read: a one-unit box, reusing the thinnest token. */
+  width: var(--border-width-thin);
+  height: var(--border-width-thin);
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.header,
+.cell {
+  padding: var(--space-4);
+  text-align: start;
+  vertical-align: middle;
+}
+
+.header {
+  border-bottom: var(--border-width-thin) solid var(--border-default);
+  font-weight: var(--font-weight-semibold);
+}
+
+.headerContent {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cell {
+  font-weight: var(--font-weight-regular);
+}
+
+tbody tr + tr .cell {
+  border-top: var(--border-width-thin) solid var(--border-default);
+}
+
+.flag {
+  text-decoration: none;
+}
