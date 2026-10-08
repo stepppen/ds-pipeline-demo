@@ -22,7 +22,7 @@ import {
   summarize,
   type Service,
 } from './leistungen'
-import styles from './kisim.module.css'
+import styles from './klinik.module.css'
 
 const ALL = 'alle'
 
