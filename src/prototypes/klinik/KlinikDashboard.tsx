@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Card } from '../../components/Card/Card'
 import { Text } from '../../components/Text/Text'
 import { DashboardTab } from './DashboardTab'
-import { KisimLayout } from './KisimLayout'
+import { KlinikLayout } from './KlinikLayout'
 import { LeistungenTab } from './LeistungenTab'
 import { moreServices, seedServices } from './leistungen'
 import { tabs } from './mockData'
 
-type KisimDashboardProps = {
+type KlinikDashboardProps = {
   initialTab?: string
   /** Current time for new Leistungen; stories pin it so snapshots don't drift. */
   clock?: () => Date
@@ -15,7 +15,7 @@ type KisimDashboardProps = {
 
 const systemClock = () => new Date()
 
-export function KisimDashboard({ initialTab = 'dashboard', clock = systemClock }: KisimDashboardProps) {
+export function KlinikDashboard({ initialTab = 'dashboard', clock = systemClock }: KlinikDashboardProps) {
   const [tab, setTab] = useState(initialTab)
   // Lifted here so captured Leistungen survive switching tabs.
   const [services, setServices] = useState(seedServices)
@@ -23,7 +23,7 @@ export function KisimDashboard({ initialTab = 'dashboard', clock = systemClock }
   const activeTab = tabs.find((item) => item.id === tab) ?? tabs[0]
 
   return (
-    <KisimLayout activeTab={activeTab.id} onTabChange={setTab}>
+    <KlinikLayout activeTab={activeTab.id} onTabChange={setTab}>
       {activeTab.id === 'dashboard' ? (
         <DashboardTab />
       ) : activeTab.id === 'leistungen' ? (
@@ -43,6 +43,6 @@ export function KisimDashboard({ initialTab = 'dashboard', clock = systemClock }
           <Text tone="muted">Für diesen Bereich gibt es im Prototyp noch keine Inhalte.</Text>
         </Card>
       )}
-    </KisimLayout>
+    </KlinikLayout>
   )
 }

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
-import { KisimDashboard } from './KisimDashboard'
+import { KlinikDashboard } from './KlinikDashboard'
 
 const meta = {
-  title: 'Prototypes/KISIM/Dashboard',
-  component: KisimDashboard,
+  title: 'Prototypes/Klinik/Dashboard',
+  component: KlinikDashboard,
   parameters: { layout: 'fullscreen', chromatic: { viewports: [1440] } },
   tags: ['!manifest'],
-} satisfies Meta<typeof KisimDashboard>
+} satisfies Meta<typeof KlinikDashboard>
 
 export default meta
 type Story = StoryObj<typeof meta>

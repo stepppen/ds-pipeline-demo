@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
-import { KisimDashboard } from './KisimDashboard'
+import { KlinikDashboard } from './KlinikDashboard'
 
 // Pinned so new entries always get 30.05.2022 11:05 in snapshots.
 const clock = () => new Date(2022, 4, 30, 11, 5)
 
 const meta = {
-  title: 'Prototypes/KISIM/Leistungen',
-  component: KisimDashboard,
+  title: 'Prototypes/Klinik/Leistungen',
+  component: KlinikDashboard,
   parameters: { layout: 'fullscreen', chromatic: { viewports: [1440] } },
   tags: ['!manifest'],
   args: { initialTab: 'leistungen', clock },
-} satisfies Meta<typeof KisimDashboard>
+} satisfies Meta<typeof KlinikDashboard>
 
 export default meta
 type Story = StoryObj<typeof meta>

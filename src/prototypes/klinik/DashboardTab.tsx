@@ -7,7 +7,7 @@ import { Text } from '../../components/Text/Text'
 import { Icon } from '../../icons/Icon'
 import { appointments, diagnoses, labColumns, labRows, orders, progressNotes, reports, vitals } from './mockData'
 import { inert } from './inert'
-import styles from './kisim.module.css'
+import styles from './klinik.module.css'
 
 
 type Entry = (typeof orders)[number]

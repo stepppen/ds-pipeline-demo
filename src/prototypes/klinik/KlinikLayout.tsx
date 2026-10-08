@@ -10,19 +10,19 @@ import { TextField } from '../../components/TextField/TextField'
 import { Icon } from '../../icons/Icon'
 import { inert } from './inert'
 import { currentUser, patient, tabs } from './mockData'
-import styles from './kisim.module.css'
+import styles from './klinik.module.css'
 
-const PANEL_ID = 'kisim-panel'
-const TAB_PREFIX = 'kisim-tab'
+const PANEL_ID = 'klinik-panel'
+const TAB_PREFIX = 'klinik-tab'
 
-type KisimLayoutProps = {
+type KlinikLayoutProps = {
   activeTab: string
   onTabChange: (id: string) => void
   children: ReactNode
 }
 
-/** App bar, patient bar and tabs shared by every KISIM screen; the active tab's content goes in the panel. */
-export function KisimLayout({ activeTab, onTabChange, children }: KisimLayoutProps) {
+/** App bar, patient bar and tabs shared by every screen of this prototype; the active tab's content goes in the panel. */
+export function KlinikLayout({ activeTab, onTabChange, children }: KlinikLayoutProps) {
   const [query, setQuery] = useState('')
 
   return (
