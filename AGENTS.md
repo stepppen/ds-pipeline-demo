@@ -48,6 +48,12 @@ design-system task. Remove an entry once it ships.
   level (KISIM patient name is h1 but 18px in the design).
 - ListRow title/subtitle sizes — fixed at 14px medium / 12px; KISIM uses 16px / 14px.
 - Banner without border (KISIM alerts are tint-only).
+- Subtle surface Card/Panel — a tinted inset panel (KISIM "Neue Leistung erfassen"
+  form uses a native div with --surface-subtle).
+- DescriptionList — label/value rows (KISIM Vitalparameter, Zusammenfassung are
+  composed from <dl> + Text).
+- Table column alignment (right-aligned numbers) and Heading `id` (to label a
+  form or region by its visible heading).
 
 **Tokens**
 - Sizes for controls; avatar colours.

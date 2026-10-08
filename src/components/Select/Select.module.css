@@ -1,0 +1,53 @@
+/* Shares TextField's styles so the two controls stay visually identical. */
+.field { composes: field from '../TextField/TextField.module.css'; }
+.label { composes: label from '../TextField/TextField.module.css'; }
+.helper { composes: helper from '../TextField/TextField.module.css'; }
+.error { composes: error from '../TextField/TextField.module.css'; }
+.sm { composes: sm from '../TextField/TextField.module.css'; }
+.md { composes: md from '../TextField/TextField.module.css'; }
+
+.select {
+  composes: control from '../TextField/TextField.module.css';
+  appearance: none;
+  cursor: pointer;
+}
+
+.select:disabled {
+  cursor: not-allowed;
+}
+
+.wrap {
+  position: relative;
+  display: flex;
+}
+
+.smWrap { --select-icon-size: var(--size-icon-sm); --select-icon-inset: var(--space-2); }
+.mdWrap { --select-icon-size: var(--size-icon-sm); --select-icon-inset: var(--space-3); }
+
+/* Room for the chevron; two classes so it wins over the size padding. */
+.wrap .select {
+  padding-inline-end: calc(var(--select-icon-inset) + var(--select-icon-size) + var(--space-2));
+}
+
+.chevron {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: var(--select-icon-inset);
+  display: flex;
+  align-items: center;
+  color: var(--text-default);
+  font-size: var(--select-icon-size);
+  pointer-events: none;
+}
+
+.select:disabled + .chevron {
+  color: var(--text-disabled);
+}
+
+.select.placeholder {
+  color: var(--text-placeholder);
+}
+
+.select option {
+  color: var(--text-default);
+}

@@ -8,6 +8,7 @@ export type IconName =
   | 'calendar'
   | 'document'
   | 'chevron-right'
+  | 'chevron-down'
   | 'warning-triangle'
   | 'cross-circle'
   | 'alert-circle'
@@ -52,6 +53,7 @@ export const iconPaths: Record<IconName, ReactNode> = {
     </>
   ),
   'chevron-right': <path d="m9 6 6 6-6 6" />,
+  'chevron-down': <path d="m6 9 6 6 6-6" />,
   'warning-triangle': (
     <>
       <path d="M10.24 3.96 2.11 17.98A2 2 0 0 0 3.84 21h16.32a2 2 0 0 0 1.73-3.02L13.76 3.96a2 2 0 0 0-3.52 0z" />

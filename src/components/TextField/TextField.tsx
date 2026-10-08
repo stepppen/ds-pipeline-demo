@@ -7,7 +7,7 @@ type TextFieldProps = {
   value: string
   onChange?: (value: string) => void
   placeholder?: string
-  type?: 'text' | 'search'
+  type?: 'text' | 'search' | 'date' | 'number'
   size?: 'sm' | 'md'
   disabled?: boolean
   invalid?: boolean
@@ -17,6 +17,12 @@ type TextFieldProps = {
   rows?: number
   required?: boolean
   maxLength?: number
+  /** Lower bound for type="number" (a number) or type="date" (YYYY-MM-DD). */
+  min?: number | string
+  /** Upper bound for type="number" or type="date". */
+  max?: number | string
+  /** Step for type="number". */
+  step?: number
   /** Decorative icon inside the input, e.g. <Icon name="search" />. Single-line only. */
   leadingIcon?: ReactNode
 }
@@ -37,6 +43,9 @@ export function TextField({
   rows = 3,
   required = false,
   maxLength,
+  min,
+  max,
+  step,
   leadingIcon,
 }: TextFieldProps) {
   const id = useId()
@@ -74,10 +83,10 @@ export function TextField({
           <span className={styles.leadingIcon} aria-hidden="true">
             {leadingIcon}
           </span>
-          <input {...controlProps} type={type} />
+          <input {...controlProps} type={type} min={min} max={max} step={step} />
         </div>
       ) : (
-        <input {...controlProps} type={type} />
+        <input {...controlProps} type={type} min={min} max={max} step={step} />
       )}
       {helperText && <p id={helperId} className={styles.helper}>{helperText}</p>}
       {showError && <p id={errorId} className={styles.error}>{errorText}</p>}
